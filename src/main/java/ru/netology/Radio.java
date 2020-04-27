@@ -9,7 +9,6 @@ public class Radio {
     private int minVolume;
     private int currentVolume;
 
-
     public int getMaxVolume() {
         return maxVolume;
     }
@@ -55,7 +54,6 @@ public class Radio {
         this.minChannel = minChannel;
     }
 
-
     public int getCurrentChannel() {
         return currentChannel;
     }
@@ -72,7 +70,6 @@ public class Radio {
     }
 
     public void increaseCurrentVolume(int currentVolume) {
-
         if (currentVolume >= maxVolume) {
             this.currentVolume = getMaxVolume();
         }
@@ -82,44 +79,27 @@ public class Radio {
     }
 
     public void decreaseCurrentVolume(int currentVolume) {
-
         if (currentVolume <= minVolume) {
             return;
         }
         this.currentVolume = currentVolume -= 1;
-
     }
 
     public void nextChannel(int currentChannel) {
-
-
-        if (currentChannel > minChannel) {
+        if (currentChannel >= minChannel) {
             this.currentChannel = currentChannel += 1;
         }
         if (currentChannel >= maxChannel) {
             this.currentChannel = getMinChannel();
         }
-
     }
 
     public void previousChannel(int currentChannel) {
-
         if (currentChannel > minChannel) {
             this.currentChannel = currentChannel -= 1;
         }
         if (currentChannel <= minChannel) {
             this.currentChannel = getMaxChannel();
         }
-
     }
-
-//    public void setCurrentTemperature(int currentTemperature) {
-//        if (currentTemperature <= maxTemperature) {
-//            if (currentTemperature >= minTemperature) {
-//                this.currentTemperature = currentTemperature;
-//            }
-//        }
-//    }
-
-
 }
