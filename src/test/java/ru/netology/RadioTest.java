@@ -29,7 +29,7 @@ class RadioTest {
         radio.setMaxVolume(10);
         radio.setMinVolume(0);
         radio.setCurrentVolume(11);
-        radio.increaseCurrentVolume(radio.getCurrentVolume());
+        radio.increaseCurrentVolume();
         int expectedVolume = 10;
 
         assertEquals(expectedVolume, radio.getCurrentVolume());
@@ -57,7 +57,7 @@ class RadioTest {
         radio.setMaxVolume(10);
         radio.setMinVolume(0);
         radio.setCurrentVolume(-1);
-        radio.increaseCurrentVolume(radio.getCurrentVolume());
+        radio.increaseCurrentVolume();
         int expectedVolume = 1;
 
         assertEquals(expectedVolume, radio.getCurrentVolume());
@@ -85,7 +85,7 @@ class RadioTest {
         radio.setMaxVolume(10);
         radio.setMinVolume(0);
         radio.setCurrentVolume(5);
-        radio.increaseCurrentVolume(radio.getCurrentVolume());
+        radio.increaseCurrentVolume();
         int expectedVolume = 6;
 
         assertEquals(expectedVolume, radio.getCurrentVolume());
@@ -113,7 +113,7 @@ class RadioTest {
         radio.setMaxVolume(10);
         radio.setMinVolume(0);
         radio.setCurrentVolume(0);
-        radio.decreaseCurrentVolume(radio.getCurrentVolume());
+        radio.decreaseCurrentVolume();
         int expectedVolume = 0;
 
         assertEquals(expectedVolume, radio.getCurrentVolume());
@@ -141,7 +141,7 @@ class RadioTest {
         radio.setMaxVolume(10);
         radio.setMinVolume(0);
         radio.setCurrentVolume(12);
-        radio.decreaseCurrentVolume(radio.getCurrentVolume());
+        radio.decreaseCurrentVolume();
         int expectedVolume = 9;
 
         assertEquals(expectedVolume, radio.getCurrentVolume());
@@ -169,7 +169,7 @@ class RadioTest {
         radio.setMaxVolume(10);
         radio.setMinVolume(0);
         radio.setCurrentVolume(5);
-        radio.decreaseCurrentVolume(radio.getCurrentVolume());
+        radio.decreaseCurrentVolume();
         int expectedVolume = 4;
 
         assertEquals(expectedVolume, radio.getCurrentVolume());
