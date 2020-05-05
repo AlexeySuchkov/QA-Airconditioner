@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: ru.netology.RadioTest
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.013 s <<< FAILURE! - in ru.netology.RadioTest
+getDecreasedChannelOverLimits  Time elapsed: 0.008 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <9> but was: <10>
+	at ru.netology.RadioTest.getDecreasedChannelOverLimits(RadioTest.java:115)
+
+getDecreasedChannelUnderLimits  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <9> but was: <-2>
+	at ru.netology.RadioTest.getDecreasedChannelUnderLimits(RadioTest.java:91)
+
+getIncreasedChannelOverLimits  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <0> but was: <11>
+	at ru.netology.RadioTest.getIncreasedChannelOverLimits(RadioTest.java:19)
+
