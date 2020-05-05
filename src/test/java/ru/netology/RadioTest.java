@@ -9,7 +9,6 @@ class RadioTest {
 
     @Test
     public void getIncreasedChannelOverLimits() {
-
         Radio radio = new Radio();
 
         radio.setMaxChannel(9);
@@ -23,7 +22,6 @@ class RadioTest {
 
     @Test
     public void getIncreasedVolumeOverLimits() {
-
         Radio radio = new Radio();
 
         radio.setMaxVolume(10);
@@ -37,7 +35,6 @@ class RadioTest {
 
     @Test
     public void getIncreasedChannelUnderLimits() {
-
         Radio radio = new Radio();
 
         radio.setMaxChannel(9);
@@ -51,7 +48,6 @@ class RadioTest {
 
     @Test
     public void getIncreasedVolumeUnderLimits() {
-
         Radio radio = new Radio();
 
         radio.setMaxVolume(10);
@@ -65,7 +61,6 @@ class RadioTest {
 
     @Test
     public void getIncreasedChannel() {
-
         Radio radio = new Radio();
 
         radio.setMaxChannel(9);
@@ -79,7 +74,6 @@ class RadioTest {
 
     @Test
     public void getIncreasedVolume() {
-
         Radio radio = new Radio();
 
         radio.setMaxVolume(10);
@@ -93,7 +87,6 @@ class RadioTest {
 
     @Test
     public void getDecreasedChannelUnderLimits() {
-
         Radio radio = new Radio();
 
         radio.setMaxChannel(9);
@@ -107,7 +100,6 @@ class RadioTest {
 
     @Test
     public void getDecreasedVolumeUnderLimits() {
-
         Radio radio = new Radio();
 
         radio.setMaxVolume(10);
@@ -121,7 +113,6 @@ class RadioTest {
 
     @Test
     public void getDecreasedChannelOverLimits() {
-
         Radio radio = new Radio();
 
         radio.setMaxChannel(9);
@@ -135,7 +126,6 @@ class RadioTest {
 
     @Test
     public void getDecreasedVolumeOverLimits() {
-
         Radio radio = new Radio();
 
         radio.setMaxVolume(10);
@@ -149,7 +139,6 @@ class RadioTest {
 
     @Test
     public void getDecreasedChannel() {
-
         Radio radio = new Radio();
 
         radio.setMaxChannel(9);
@@ -163,7 +152,6 @@ class RadioTest {
 
     @Test
     public void getDecreasedVolume() {
-
         Radio radio = new Radio();
 
         radio.setMaxVolume(10);
