@@ -92,6 +92,7 @@ public class Radio {
         }
         // if (currentChannel == maxChannel) {
         //     this.currentChannel = minChannel;
+        //     return;
         // }
         // this.currentChannel ++;
     }
@@ -109,6 +110,7 @@ public class Radio {
         }
         // if (currentChannel == minChannel) {
         //     this.currentChannel = maxChannel;
+        //     return;
         // }
         // this.currentChannel --;
     }
