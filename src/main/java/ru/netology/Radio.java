@@ -25,14 +25,15 @@ public class Radio {
     public void setCurrentVolume(int currentVolume) {
         if (currentVolume >= maxVolume) {
             this.currentVolume = maxVolume;
+            return;
         }
         if (currentVolume <= minVolume) {
             this.currentVolume = minVolume;
+            return;
         }
-        if (currentVolume < maxVolume)
-            if (currentVolume > minVolume)
+
                 // здесь уверены, что все проверки прошли
-                this.currentVolume = currentVolume;
+        this.currentVolume = currentVolume;
     }
 
     public int getMaxChannel() {
@@ -58,9 +59,11 @@ public class Radio {
     public void setCurrentChannel(int currentChannel) {
         if (currentChannel > maxChannel) {
             this.currentChannel = getMinChannel();
+            return;
         }
         if (currentChannel < minChannel) {
             this.currentChannel = getMaxChannel();
+            return;
         }
         this.currentChannel = currentChannel;
     }
@@ -80,38 +83,38 @@ public class Radio {
     }
 
     public void nextChannel() {
-        if (currentChannel >= minChannel)
-            if (currentChannel < maxChannel){
-                this.currentChannel = currentChannel + 1;
-        }
-        if (currentChannel < minChannel) {
-            this.currentChannel = maxChannel;
-        }
-        if (currentChannel >= maxChannel) {
-            this.currentChannel = minChannel;
-        }
-        // if (currentChannel == maxChannel) {
-        //     this.currentChannel = minChannel;
-        //     return;
+        // if (currentChannel >= minChannel)
+        //     if (currentChannel < maxChannel){
+        //         this.currentChannel = currentChannel + 1;
         // }
-        // this.currentChannel ++;
+        // if (currentChannel < minChannel) {
+        //     this.currentChannel = maxChannel;
+        // }
+        // if (currentChannel >= maxChannel) {
+        //     this.currentChannel = minChannel;
+        // }
+        if (currentChannel == maxChannel) {
+            this.currentChannel = minChannel;
+            return;
+        }
+        this.currentChannel ++;
     }
 
     public void previousChannel() {
-        if (currentChannel > minChannel)
-            if (currentChannel <= maxChannel) {
-                this.currentChannel = currentChannel - 1;
-        }
-        if (currentChannel > maxChannel) {
-            this.currentChannel = minChannel;
-        }
-        if (currentChannel <= minChannel) {
-            this.currentChannel = maxChannel;
-        }
-        // if (currentChannel == minChannel) {
-        //     this.currentChannel = maxChannel;
-        //     return;
+        // if (currentChannel > minChannel)
+        //     if (currentChannel <= maxChannel) {
+        //         this.currentChannel = currentChannel - 1;
         // }
-        // this.currentChannel --;
+        // if (currentChannel > maxChannel) {
+        //     this.currentChannel = minChannel;
+        // }
+        // if (currentChannel <= minChannel) {
+        //     this.currentChannel = maxChannel;
+        // }
+        if (currentChannel == minChannel) {
+            this.currentChannel = maxChannel;
+            return;
+        }
+        this.currentChannel --;
     }
 }

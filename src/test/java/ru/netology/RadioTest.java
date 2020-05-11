@@ -14,7 +14,7 @@ class RadioTest {
         radio.setMinChannel(0);
         radio.setCurrentChannel(10);
         radio.nextChannel();
-        int expectedChannel = 0;
+        int expectedChannel = 1;
 
         assertEquals(expectedChannel, radio.getCurrentChannel());
     }
@@ -86,7 +86,7 @@ class RadioTest {
         radio.setMinChannel(0);
         radio.setCurrentChannel(-1);
         radio.previousChannel();
-        int expectedChannel = 9;
+        int expectedChannel = 8;
 
         assertEquals(expectedChannel, radio.getCurrentChannel());
     }
