@@ -31,8 +31,6 @@ public class Radio {
             this.currentVolume = minVolume;
             return;
         }
-
-                // здесь уверены, что все проверки прошли
         this.currentVolume = currentVolume;
     }
 
@@ -83,16 +81,6 @@ public class Radio {
     }
 
     public void nextChannel() {
-        // if (currentChannel >= minChannel)
-        //     if (currentChannel < maxChannel){
-        //         this.currentChannel = currentChannel + 1;
-        // }
-        // if (currentChannel < minChannel) {
-        //     this.currentChannel = maxChannel;
-        // }
-        // if (currentChannel >= maxChannel) {
-        //     this.currentChannel = minChannel;
-        // }
         if (currentChannel == maxChannel) {
             this.currentChannel = minChannel;
             return;
@@ -101,16 +89,6 @@ public class Radio {
     }
 
     public void previousChannel() {
-        // if (currentChannel > minChannel)
-        //     if (currentChannel <= maxChannel) {
-        //         this.currentChannel = currentChannel - 1;
-        // }
-        // if (currentChannel > maxChannel) {
-        //     this.currentChannel = minChannel;
-        // }
-        // if (currentChannel <= minChannel) {
-        //     this.currentChannel = maxChannel;
-        // }
         if (currentChannel == minChannel) {
             this.currentChannel = maxChannel;
             return;

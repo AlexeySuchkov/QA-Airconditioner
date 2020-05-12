@@ -27,7 +27,6 @@ public class Conditioner {
             this.currentTemperature = minTemperature;
             return;
         }
-        // здесь уверены, что все проверки прошли
         this.currentTemperature = currentTemperature;
     }
 
