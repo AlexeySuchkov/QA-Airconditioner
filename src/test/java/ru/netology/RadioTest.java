@@ -10,8 +10,8 @@ class RadioTest {
     @Test
     public void getIncreasedChannelOverLimits() {
         Radio radio = new Radio();
-        radio.setMaxChannel(9);
-        radio.setMinChannel(0);
+        // radio.setMaxChannel(9);
+        // radio.setMinChannel(0);
         radio.setCurrentChannel(10);
         radio.nextChannel();
         int expectedChannel = 1;
@@ -20,13 +20,25 @@ class RadioTest {
     }
 
     @Test
+    public void getIncreasedIfMaxChannelSet() {
+        Radio radio = new Radio();
+        radio.setMaxChannel(5);
+        // radio.setMinChannel(0);
+        radio.setCurrentChannel(5);
+        radio.nextChannel();
+        int expectedChannel = 0;
+
+        assertEquals(expectedChannel, radio.getCurrentChannel());
+    }
+
+    @Test
     public void getIncreasedVolumeOverLimits() {
         Radio radio = new Radio();
-        radio.setMaxVolume(10);
-        radio.setMinVolume(0);
-        radio.setCurrentVolume(11);
+        // radio.setMaxVolume(10);
+        // radio.setMinVolume(0);
+        radio.setCurrentVolume(111);
         radio.increaseCurrentVolume();
-        int expectedVolume = 10;
+        int expectedVolume = 100;
 
         assertEquals(expectedVolume, radio.getCurrentVolume());
     }
@@ -34,8 +46,8 @@ class RadioTest {
     @Test
     public void getIncreasedChannelUnderLimits() {
         Radio radio = new Radio();
-        radio.setMaxChannel(9);
-        radio.setMinChannel(0);
+        // radio.setMaxChannel(9);
+        // radio.setMinChannel(0);
         radio.setCurrentChannel(-1);
         radio.nextChannel();
         int expectedChannel = 0;
@@ -46,8 +58,8 @@ class RadioTest {
     @Test
     public void getIncreasedVolumeUnderLimits() {
         Radio radio = new Radio();
-        radio.setMaxVolume(10);
-        radio.setMinVolume(0);
+        // radio.setMaxVolume(10);
+        // radio.setMinVolume(0);
         radio.setCurrentVolume(-1);
         radio.increaseCurrentVolume();
         int expectedVolume = 1;
@@ -58,8 +70,8 @@ class RadioTest {
     @Test
     public void getIncreasedChannel() {
         Radio radio = new Radio();
-        radio.setMaxChannel(9);
-        radio.setMinChannel(0);
+        // radio.setMaxChannel(9);
+        // radio.setMinChannel(0);
         radio.setCurrentChannel(5);
         radio.nextChannel();
         int expectedChannel = 6;
@@ -70,8 +82,8 @@ class RadioTest {
     @Test
     public void getIncreasedVolume() {
         Radio radio = new Radio();
-        radio.setMaxVolume(10);
-        radio.setMinVolume(0);
+        // radio.setMaxVolume(10);
+        // radio.setMinVolume(0);
         radio.setCurrentVolume(5);
         radio.increaseCurrentVolume();
         int expectedVolume = 6;
@@ -82,8 +94,8 @@ class RadioTest {
     @Test
     public void getDecreasedChannelUnderLimits() {
         Radio radio = new Radio();
-        radio.setMaxChannel(9);
-        radio.setMinChannel(0);
+        // radio.setMaxChannel(9);
+        // radio.setMinChannel(0);
         radio.setCurrentChannel(-1);
         radio.previousChannel();
         int expectedChannel = 8;
@@ -94,8 +106,8 @@ class RadioTest {
     @Test
     public void getDecreasedVolumeUnderLimits() {
         Radio radio = new Radio();
-        radio.setMaxVolume(10);
-        radio.setMinVolume(0);
+        // radio.setMaxVolume(10);
+        // radio.setMinVolume(0);
         radio.setCurrentVolume(0);
         radio.decreaseCurrentVolume();
         int expectedVolume = 0;
@@ -106,8 +118,8 @@ class RadioTest {
     @Test
     public void getDecreasedChannelOverLimits() {
         Radio radio = new Radio();
-        radio.setMaxChannel(9);
-        radio.setMinChannel(0);
+        // radio.setMaxChannel(9);
+        // radio.setMinChannel(0);
         radio.setCurrentChannel(11);
         radio.previousChannel();
         int expectedChannel = 9;
@@ -118,20 +130,32 @@ class RadioTest {
     @Test
     public void getDecreasedVolumeOverLimits() {
         Radio radio = new Radio();
-        radio.setMaxVolume(10);
-        radio.setMinVolume(0);
-        radio.setCurrentVolume(12);
+        // radio.setMaxVolume(10);
+        // radio.setMinVolume(0);
+        radio.setCurrentVolume(111);
         radio.decreaseCurrentVolume();
-        int expectedVolume = 9;
+        int expectedVolume = 99;
 
         assertEquals(expectedVolume, radio.getCurrentVolume());
     }
 
     @Test
+    public void getDecreasedWhenMaxChannelSet() {
+        Radio radio = new Radio();
+        radio.setMaxChannel(5);
+        // radio.setMinChannel(0);
+        radio.setCurrentChannel(0);
+        radio.previousChannel();
+        int expectedChannel = 5;
+
+        assertEquals(expectedChannel, radio.getCurrentChannel());
+    }
+
+    @Test
     public void getDecreasedChannel() {
         Radio radio = new Radio();
-        radio.setMaxChannel(9);
-        radio.setMinChannel(0);
+        // radio.setMaxChannel(9);
+        // radio.setMinChannel(0);
         radio.setCurrentChannel(5);
         radio.previousChannel();
         int expectedChannel = 4;
@@ -142,8 +166,8 @@ class RadioTest {
     @Test
     public void getDecreasedVolume() {
         Radio radio = new Radio();
-        radio.setMaxVolume(10);
-        radio.setMinVolume(0);
+        // radio.setMaxVolume(10);
+        // radio.setMinVolume(0);
         radio.setCurrentVolume(5);
         radio.decreaseCurrentVolume();
         int expectedVolume = 4;
